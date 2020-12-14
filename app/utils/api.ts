@@ -13,8 +13,13 @@ function getErrorMsg(message: string, username: string) {
 export interface User {
   id: string;
   followers: number;
+  following: number;
   login: string;
   avatar_url: string;
+  name: string;
+  location?: string;
+  company?: string;
+  html_url: string;
 }
 function getProfile(username: string): Promise<User> {
   return fetch(`https://api.github.com/users/${username}${params}`)
