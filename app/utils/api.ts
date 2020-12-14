@@ -13,6 +13,8 @@ function getErrorMsg(message: string, username: string) {
 export interface User {
   id: string;
   followers: number;
+  login: string;
+  avatar_url: string;
 }
 function getProfile(username: string): Promise<User> {
   return fetch(`https://api.github.com/users/${username}${params}`)
@@ -28,6 +30,11 @@ function getProfile(username: string): Promise<User> {
 
 export interface Repo {
   id: string;
+  name: string;
+  owner: User;
+  html_url: string;
+  forks: number;
+  open_issues: number;
   stargazers_count: number;
 }
 
