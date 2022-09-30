@@ -6,13 +6,13 @@ import Nav from './components/Nav'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Loading from './components/Loading'
 
-const Popular = React.lazy(() => import('./components/Popular'));
-const Battle = React.lazy(() => import('./components/Battle'));
-const Results = React.lazy(() => import('./components/Results'));
+const Popular = React.lazy(() => import('./components/Popular'))
+const Battle = React.lazy(() => import('./components/Battle'))
+const Results = React.lazy(() => import('./components/Results'))
 
 function App () {
-  const [theme, setTheme] = React.useState('light');
-  const toggleTheme = () => setTheme((theme) => theme === 'light' ? 'dark' : 'light');
+  const [theme, setTheme] = React.useState('light')
+  const toggleTheme = () => setTheme((theme) => theme === 'light' ? 'dark' : 'light')
 
   return (
     <Router>
@@ -39,4 +39,4 @@ function App () {
 ReactDOM.render(
   <App />,
   document.getElementById('app')
-);
+)
